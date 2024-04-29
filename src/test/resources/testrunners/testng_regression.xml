@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="My Application Test Regression Suite" thread-count="4" parallel="tests" verbose="4">
+    <listeners>
+        <listener class-name="com.bw.qa.listeners.ExtentReportListener" />
+        <listener class-name="com.bw.qa.listeners.TestAllureListener" />
+<!--        <listener class-name="com.bw.qa.listeners.AnnotationTransformer" />-->
+    </listeners>
+    <test name="Login Page Test">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.bw.qa.testcases.ScriptTest" />
+        </classes>
+    </test>
+</suite>
