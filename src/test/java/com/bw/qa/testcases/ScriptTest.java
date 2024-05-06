@@ -3,6 +3,7 @@ package com.bw.qa.testcases;
 import com.bw.qa.basetest.BaseTest;
 import com.bw.qa.listeners.TestAllureListener;
 import io.qameta.allure.*;
+import net.bytebuddy.build.Plugin;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -14,16 +15,16 @@ import org.testng.annotations.Test;
 public class ScriptTest extends BaseTest {
     @Description("verifying user is able to login with correct credentials")
     @Severity(SeverityLevel.CRITICAL)
-    @Test
-    public void loginTest()  {
+    @Test(priority = 1)
+    public void loginTest() throws InterruptedException {
         createPostPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
         Assert.assertTrue(createPostPage.checkLogoExist());
     }
 
     @Severity(SeverityLevel.BLOCKER)
     @Description("Creating post feature test...")
-    @Test
-    public void createPostTest()  {
+    @Test(priority = 2)
+    public void createPostTest() throws InterruptedException {
         createPostPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
         createPostPage.clickOnCreateNewPostBtn();
         createPostPage.selectPostOption("official");

@@ -17,7 +17,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected CreatePostPage createPostPage;
     @Parameters({"browser"})
-    @BeforeTest
+    @BeforeTest()
     public void setUp(String browserName){
         df = new DriverFactory();
         prop = df.initProp();

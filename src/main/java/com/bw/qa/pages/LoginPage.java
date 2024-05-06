@@ -24,15 +24,19 @@ public class LoginPage  {
     }
 
     @Step("Doing Login with username is :{0} and password {1} ")
-    public CreatePostPage login(String un, String pwd) {
+    public CreatePostPage login(String un, String pwd) throws InterruptedException {
 
         elementUtil.waitForVisibilityOfElement(userName, AppConstants.SHORT_DEFAULT_WAIT).sendKeys(un);
+        Thread.sleep(10);
 //        elementUtil.doClick(verificationBtn);
         elementUtil.waitForVisibilityOfElement(verificationBtn,AppConstants.MEDIUM_DEFAULT_WAIT).click();
+        Thread.sleep(10);
 //        elementUtil.doSendKeys(password,pwd);
         elementUtil.waitForVisibilityOfElement(password,AppConstants.SHORT_DEFAULT_WAIT).sendKeys(pwd);
+        Thread.sleep(10);
 //        elementUtil.doClick(loginBtn);
         elementUtil.waitForVisibilityOfElement(loginBtn,AppConstants.SHORT_DEFAULT_WAIT).click();
+        Thread.sleep(10);
         return new CreatePostPage(driver);
 
     }
