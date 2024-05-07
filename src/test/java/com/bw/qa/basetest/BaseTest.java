@@ -16,14 +16,16 @@ public class BaseTest {
     DriverFactory df;
     protected LoginPage loginPage;
     protected CreatePostPage createPostPage;
-    @Parameters({"browser"})
+    @Parameters({"browser","browserversion","testname"})
     @BeforeTest()
-    public void setUp(String browserName){
+    public void setUp(String browserName,String browserVersion, String testName){
         df = new DriverFactory();
         prop = df.initProp();
 
         if (browserName!=null){
             prop.setProperty("browser",browserName);
+            prop.setProperty("browserversion", browserVersion);
+            prop.setProperty("testname", testName);
         }
 
        driver =  df.init_Driver(prop);
