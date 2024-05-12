@@ -25,6 +25,7 @@ Additionally, it offers the ability to capture screenshots for tests and generat
 2. TestNG TDD feature for executing test cases
 3. Utility functions to handle Driver methods.
 4. Extent and Allure reports for test execution details.
+5. Docker - to execute the tests in light weight containers
 
 **GETTING STARTED**
 
@@ -41,3 +42,9 @@ mvn clean install
 mvn clean install -Dbrowser="chrome"(to use any other browser)
 
 mvn clean install -Denv="qa"(to use any other environment)
+
+if you are familiar with docker you can user the docker-compose yml file to run the tests in selenium grid
+
+Use this command
+
+docker-compose up -d
