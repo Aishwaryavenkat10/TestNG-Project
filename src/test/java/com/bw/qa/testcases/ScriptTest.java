@@ -17,7 +17,9 @@ public class ScriptTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void loginTest() throws InterruptedException {
-        createPostPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+        createPostPage = loginPage.loginUn(prop.getProperty("username"));
+        createPostPage = loginPage.loginPw(prop.getProperty("password"));
+     //   createPostPage = loginPage.loginpw(prop.getProperty("password"));
         Assert.assertTrue(createPostPage.checkLogoExist());
     }
 
@@ -25,7 +27,9 @@ public class ScriptTest extends BaseTest {
     @Description("Creating post feature test...")
     @Test(priority = 2)
     public void createPostTest() throws InterruptedException {
-        createPostPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+       // createPostPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+    	 createPostPage = loginPage.loginUn(prop.getProperty("username"));
+         createPostPage = loginPage.loginPw(prop.getProperty("password"));
         createPostPage.clickOnCreateNewPostBtn();
         createPostPage.selectPostOption("official");
         createPostPage.selectPostType("open");

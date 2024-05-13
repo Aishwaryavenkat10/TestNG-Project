@@ -8,8 +8,8 @@
     </listeners>
     <test name="Login Page Test">
         <parameter name="browser" value="chrome" />
-<!--        <parameter name="browserversion" value="113" />-->
-<!--        <parameter name="testname" value="script test" />-->
+       <parameter name="browserversion" value="124" />
+       <parameter name="testname" value="script test" />
         <classes>
             <class name="com.bw.qa.testcases.ScriptTest" />
         </classes>
